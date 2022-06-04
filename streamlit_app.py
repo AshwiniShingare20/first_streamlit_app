@@ -50,14 +50,10 @@ except URLError as e:
   streamlit.error()
 
 
-
-
-
-my_cur = my_cnx.cursor()
 #my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 
 streamlit.header("The fruit load list contains")
-drf get_fruitloadlist():
+def get_fruitloadlist():
   with my_cnx.cursor() as my_cur:
     my_cur.execute("SELECT * from fruit_load_list")
     return my_cur.fetchall()
